@@ -2,10 +2,14 @@ package app
 
 import (
 	"log/slog"
+	"net/http"
 
 	"github.com/Sixchalice/go-cassandra-rest/config"
+	"github.com/Sixchalice/go-cassandra-rest/internal/api"
 	"github.com/Sixchalice/go-cassandra-rest/internal/constants"
 	"github.com/Sixchalice/go-cassandra-rest/internal/db"
+	"github.com/Sixchalice/go-cassandra-rest/internal/repository"
+	"github.com/Sixchalice/go-cassandra-rest/internal/service"
 	"github.com/Sixchalice/go-cassandra-rest/logger"
 	"github.com/gocql/gocql"
 )
@@ -14,10 +18,9 @@ import (
 type App struct {
 	Config *config.Config
 	DB     *gocql.Session
+	Mux    *http.ServeMux
 }
 
-// InitApp initializes the app: config, logger, database
-// Returns the App struct and a cleanup function
 func InitApp() (*App, func(), error) {
 	// Load configuration
 	cfg, err := config.Load()
@@ -38,6 +41,13 @@ func InitApp() (*App, func(), error) {
 		return nil, nil, err
 	}
 
+	// Initialize repository, service, and handler
+	repo := repository.NewUserRepository(dbSession)
+	svc := service.NewUserService(repo)
+	userHandler := api.NewUserHandler(svc)
+
+	mux := api.InitMux(userHandler)
+
 	// Aggregate cleanup functions
 	cleanup := func() {
 		dbCleanup()
@@ -48,5 +58,6 @@ func InitApp() (*App, func(), error) {
 	return &App{
 		Config: cfg,
 		DB:     dbSession,
+		Mux:    mux,
 	}, cleanup, nil
 }
