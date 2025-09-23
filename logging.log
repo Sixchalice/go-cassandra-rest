@@ -1,0 +1,13 @@
+{"time":"2025-09-23T10:15:25.498461+03:00","level":"INFO","msg":"Configuration loaded successfully","config":{"DatabaseURI":"127.0.0.1","LogPath":"logging.log"}}
+{"time":"2025-09-23T10:20:50.932235+03:00","level":"INFO","msg":"Configuration loaded successfully","config":{"DatabaseURI":"127.0.0.1","LogPath":"logging.log"}}
+{"time":"2025-09-23T10:20:50.962518+03:00","level":"INFO","msg":"Keyspace created or already exists","keyspace":"todo"}
+{"time":"2025-09-23T10:20:50.982252+03:00","level":"INFO","msg":"Database initialized successfully","session":{}}
+{"time":"2025-09-23T10:23:35.102734+03:00","level":"INFO","msg":"Configuration loaded successfully","config":{"DatabaseURI":"127.0.0.1","LogPath":"logging.log"}}
+{"time":"2025-09-23T10:23:35.121737+03:00","level":"INFO","msg":"Keyspace created or already exists","keyspace":"todo"}
+{"time":"2025-09-23T10:23:35.138549+03:00","level":"INFO","msg":"Database initialized successfully","session":{}}
+{"time":"2025-09-23T10:27:39.547363+03:00","level":"INFO","msg":"Configuration loaded successfully","config":{"DatabaseURI":"127.0.0.1","LogPath":"logging.log"}}
+{"time":"2025-09-23T10:27:39.564803+03:00","level":"INFO","msg":"Keyspace created or already exists","keyspace":"todo"}
+{"time":"2025-09-23T10:27:39.578847+03:00","level":"INFO","msg":"Database initialized successfully","session":{}}
+{"time":"2025-09-23T10:32:42.735646+03:00","level":"INFO","msg":"Keyspace created or already exists","keyspace":"todo"}
+{"time":"2025-09-23T10:32:42.755859+03:00","level":"INFO","msg":"App initialized successfully","config":{"DatabaseURI":"127.0.0.1","LogPath":"logging.log"}}
+{"time":"2025-09-23T10:32:42.756147+03:00","level":"INFO","msg":"App is running","config":{"DatabaseURI":"127.0.0.1","LogPath":"logging.log"}}
